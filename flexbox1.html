@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout using Flexbox & Grid</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+/* Header */
+header{
+    background:linear-gradient(to right,#4facfe,#00c6ff);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Navigation - Flexbox */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#222;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+/* Grid Layout */
+.container{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.box h2{
+    color:#0077b6;
+    margin-bottom:10px;
+}
+
+/* Flexbox Cards */
+.card-container{
+    display:flex;
+    gap:20px;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    width:200px;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:#333;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* Responsive Design */
+@media(max-width:768px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+nav{
+    flex-direction:column;
+    align-items:center;
+}
+
+.card-container{
+    flex-direction:column;
+    align-items:center;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Responsive Layout</h1>
+<p>Using Flexbox & CSS Grid</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+<div class="box">
+<h2>Sidebar</h2>
+<p>
+This is the left sidebar.
+It contains links and additional information.
+</p>
+</div>
+
+<div class="box">
+<h2>Main Content</h2>
+<p>
+This section uses CSS Grid for page layout and Flexbox for arranging cards.
+Resize the browser window to see the responsive effect.
+</p>
+
+<div class="card-container">
+
+<div class="card">
+<h3>HTML</h3>
+<p>Structure of web pages</p>
+</div>
+
+<div class="card">
+<h3>CSS</h3>
+<p>Design and Styling</p>
+</div>
+
+<div class="card">
+<h3>JavaScript</h3>
+<p>Interactive Web Pages</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="box">
+<h2>News</h2>
+<p>
+Latest updates and announcements appear here.
+</p>
+</div>
+
+</div>
+
+<footer>
+<h3>© 2026 Responsive Web Design Example</h3>
+</footer>
+
+</body>
+</html>
